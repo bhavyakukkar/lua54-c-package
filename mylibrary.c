@@ -1,17 +1,10 @@
 #include <dirent.h>
 #include <string.h>
 #include <errno.h>
-#include <lauxlib.h>
-#include <lua.h>
-#include <lualib.h>
+#include <lua5.4/lauxlib.h>
+#include <lua5.4/lua.h>
+#include <lua5.4/lualib.h>
 
-// #ifdef LUA
-
-// static int l_sin(lua_State *L) {
-//   double d = lua_tonumber(L, 1); /* get argument */
-//   lua_pushnumber(L, sin(d));     /* push result */
-//   return 1;                      /* number of results */
-// }
 
 static int l_dir(lua_State *L) {
   DIR *dir;
@@ -51,4 +44,3 @@ int mylibrary(lua_State *L) {
   return 1;
 }
 
-// #endif
