@@ -1,9 +1,9 @@
 #include <dirent.h>
 #include <string.h>
 #include <errno.h>
-#include <lua5.4/lauxlib.h>
-#include <lua5.4/lua.h>
-#include <lua5.4/lualib.h>
+#include <lauxlib.h>
+#include <lua.h>
+#include <lualib.h>
 
 
 static int l_dir(lua_State *L) {
@@ -37,7 +37,7 @@ static const struct luaL_Reg mylib[] = {
     {"dir", l_dir}, {NULL, NULL} /* sentinel */
 };
 
-int mylibrary(lua_State *L) {
+int luaopen_mylibrary(lua_State *L) {
   lua_pushcfunction(L, l_dir);
   lua_setglobal(L, "dir");
   // luaL_openlib(L, "mylib", mylib, 0);
