@@ -39,7 +39,6 @@ static const struct luaL_Reg mylib[] = {
 
 int luaopen_mylibrary(lua_State *L) {
   lua_pushcfunction(L, l_dir);
-  lua_setglobal(L, "dir");
   // luaL_openlib(L, "mylib", mylib, 0);
   return 1;
 }
